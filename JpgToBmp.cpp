@@ -1,13 +1,10 @@
-/*
-* =====================================================================================
-*
-*       Filename:  tobmp.cpp
-*    Description: jpg 2 16-565 bmp
-*        Version:  1.0
-*        Created:  2015-05-08 14:01:38
-*         Author:  Deep Lee ,
-* =====================================================================================
-*/
+/****************************************************
+ *         Author: chen - cm@xiaocong.tv
+ *  Last modified: 2015-09-18 17:34
+ *       Filename: JpgToBmp.cpp
+ *    Description: 
+*****************************************************/
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <errno.h>
@@ -17,14 +14,14 @@
 // #include <jni.h>
 // #include <cutils/log.h>
 
-// #include "com_Lee_toBmp.h"
+// #include "com_chen_toBmp.h"
 extern "C"{
 #include "jpeglib.h"
 };
 
 #define LOG_TAG "UST_JNI"
 
-namespace Lee
+namespace chen
 {
 
     FILE *input_file;
@@ -258,19 +255,19 @@ namespace Lee
     }
 }
 
-//void JNICALL Java_com_Lee_toBmp_jpg2bmp(JNIEnv *env, jclass thiz, jstring jpgpath, jstring bmppath)
+//void JNICALL Java_com_chen_toBmp_jpg2bmp(JNIEnv *env, jclass thiz, jstring jpgpath, jstring bmppath)
 //{
 //    const char *jpgfile;
 //    const char *bmpfile;
 //    jpgfile = env->GetStringUTFChars(jpgpath, NULL);
 //    bmpfile = env->GetStringUTFChars(bmppath, NULL);
-//    Lee::input_file=fopen(jpgfile, "rb");
-//    Lee::output_file=fopen(bmpfile, "wb");
+//    chen::input_file=fopen(jpgfile, "rb");
+//    chen::output_file=fopen(bmpfile, "wb");
 //
-//    Lee::analyse_jpeg();
+//    chen::analyse_jpeg();
 //
-//    fclose(Lee::input_file);
-//    fclose(Lee::output_file);
+//    fclose(chen::input_file);
+//    fclose(chen::output_file);
 //}
 
 int main(int argc, char *argv[])
@@ -279,11 +276,11 @@ int main(int argc, char *argv[])
     const char *bmpfile;
     jpgfile = argv[1];
     bmpfile = argv[2];
-    Lee::input_file=fopen(jpgfile, "rb");
-    Lee::output_file=fopen(bmpfile, "wb");
+    chen::input_file=fopen(jpgfile, "rb");
+    chen::output_file=fopen(bmpfile, "wb");
 
-    Lee::analyse_jpeg();
+    chen::analyse_jpeg();
 
-    fclose(Lee::input_file);
-    fclose(Lee::output_file);
+    fclose(chen::input_file);
+    fclose(chen::output_file);
 }
